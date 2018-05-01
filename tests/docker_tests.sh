@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 DOCKER_IMAGE="dockerframework/pgadmin"
-DOCKER_TAG="3.0"
+DOCKER_TAG="latest"
 
 #### Halt script on error
 set -e
