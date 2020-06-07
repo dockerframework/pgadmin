@@ -25,6 +25,7 @@ MAINTAINER "Laradock Team <mahmoud@zalt.me>"
 ENV PGADMIN_DEFAULT_EMAIL="laradock@laradock.io" \
     PGADMIN_DEFAULT_PASSWORD="password"
 
+USER root
 RUN mkdir -p /sessions
 
 EXPOSE 80
