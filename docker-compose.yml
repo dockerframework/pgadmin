@@ -36,6 +36,6 @@ services:
       - ./session/pgadmin:/sessions                                  # volume for sessions
       - ./data/pgadmin:/var/lib/pgadmin/storage
     environment:
-      - PGADMIN_VERSION=4.22
+      - PGADMIN_VERSION=4.29
       - PGADMIN_DEFAULT_EMAIL=laradock@laradock.io
       - PGADMIN_DEFAULT_PASSWORD=password
