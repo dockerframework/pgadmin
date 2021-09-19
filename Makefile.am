@@ -1,5 +1,5 @@
 IMAGE = dockerframework/pgadmin
-TAG = latest
+TAG = 5.7
 
 clean-local:
 	docker rmi $(CLEAN_OPTIONS) $(IMAGE):$(TAG) || true
