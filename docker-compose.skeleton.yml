@@ -1,28 +1,27 @@
-version: '3.6'
+version: "3.6"
 
 services:
-
-#================================================================================================
-# POSTGRESQL
-#================================================================================================
+  #================================================================================================
+  # POSTGRESQL
+  #================================================================================================
   postgresql:
     restart: always
-    image: dockerframework/postgresql:12.3
+    image: dockerframework/postgresql:12.8
     ports:
       - "${POSTGRES_PORT}:5432"
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - ${DATABASE_POSTGRESQL}:/var/lib/postgresql                   # volume for data
+      - ${DATABASE_POSTGRESQL}:/var/lib/postgresql # volume for data
     environment:
       - POSTGRES_VERSION=${POSTGRES_VERSION}
-      - POSTGRES_ROOT_HOST=${POSTGRES_ROOT_HOST}                     # grant user hostmask (optional)
-      - POSTGRES_DATABASE=${POSTGRES_DATABASE}                       # create database (optional)
-      - POSTGRES_USER=${POSTGRES_USER}                               # grant user name (optional)
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}                       # grant user password (optional)
+      - POSTGRES_ROOT_HOST=${POSTGRES_ROOT_HOST} # grant user hostmask (optional)
+      - POSTGRES_DATABASE=${POSTGRES_DATABASE} # create database (optional)
+      - POSTGRES_USER=${POSTGRES_USER} # grant user name (optional)
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD} # grant user password (optional)
 
-#================================================================================================
-# PGADMIN
-#================================================================================================
+  #================================================================================================
+  # PGADMIN
+  #================================================================================================
   pgadmin:
     restart: always
     build:
@@ -33,7 +32,7 @@ services:
       - postgresql
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - ${SESSION_PGADMIN}:/sessions                                 # volume for sessions
+      - ${SESSION_PGADMIN}:/sessions # volume for sessions
       - ${DATA_PGADMIN}:/var/lib/pgadmin/storage
     environment:
       - PGADMIN_VERSION=${PGADMIN_VERSION}

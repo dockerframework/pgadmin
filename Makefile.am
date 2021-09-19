@@ -1,4 +1,5 @@
 IMAGE = dockerframework/pgadmin
+TAG = latest
 
 clean-local:
 	docker rmi $(CLEAN_OPTIONS) $(IMAGE):$(TAG) || true

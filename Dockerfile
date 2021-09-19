@@ -1,4 +1,4 @@
-ARG PGADMIN4_VERSION=4.29
+ARG PGADMIN4_VERSION=5.7
 FROM dpage/pgadmin4:${PGADMIN4_VERSION}
 
 # ================================================================================================
